@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Untils</string>
+    <string name="slogan">Where did you travel until today?</string>
+    <string name="start">LET\'S START!</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="or">______OR______</string>
+    <string name="sign_up">SIGN UP</string>
+
+    <string name="loginslogan">Log In To Your</string>
+    <string name="loginslogan2">TRAVELS</string>
+    <string name="password">Password</string>
+    <string name="forgotpassword">Forgot Password?</string>
+
+    <string name="username">Username</string>
+    <string name="termsofuse">"Create" with term of use and privacy policy accepted</string>
+    <string name="title_activity_maps">Map</string>
+
+
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@mipmap/marker">
+
+    </item>
+
+    <item
+        android:bottom="26dp"
+        android:left="7dp"
+        android:right="7dp">
+        <shape>
+            <corners android:radius="10dp"/>
+            <solid android:color="@color/colorPurple"></solid>
+        </shape>
+    </item>-->
+
+
+
+
+</layer-list>

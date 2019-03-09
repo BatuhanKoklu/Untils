@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorOrangeTransparent">#30DD988A</color>
+    <color name="colorPurpleTransparent">#20473d91</color>
+    <color name="colorOrange">#dd988a</color>
+    <color name="colorWhite">#fafafa</color>
+    <color name="coloTransparent">#00000000</color>
+    <color name="colorMavi">#2569b5</color>
+    <color name="colorMaviTransparent">#702569b5</color>
+    <color name="colorGrey">#B6B6B6</color>
+    <color name="colorPurple">#473d91</color>
+
+
+</resources>
