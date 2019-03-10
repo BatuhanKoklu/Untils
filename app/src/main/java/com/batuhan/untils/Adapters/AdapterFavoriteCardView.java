@@ -46,9 +46,9 @@ public class AdapterFavoriteCardView extends  RecyclerView.Adapter<AdapterFavori
 
         holder.txtTripName.setText(userTrip.getTripName());
 
-        helper.urlToImage(userTrip.g);
+        helper.urlToImage(userTrip.getTripImage(),holder.imgProfile,mContext);
 
-        holder.imgProfile.setBackgroundResource(helper.urlToImage());
+        //holder.imgProfile.setBackgroundResource(helper.urlToImage());
         //helper.urlToImage(user.getUserImage(),holder.imgProfile,mContext);
     }
 

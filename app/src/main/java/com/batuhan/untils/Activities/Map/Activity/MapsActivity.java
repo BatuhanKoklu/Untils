@@ -56,7 +56,7 @@ public class MapsActivity extends Fragment implements MapPresenter.MapView {
 
 
         final User user1 = new User(1,"Batuhan","btn@hotmail.com","12345","http://www.morningstarskitours.com/wp-content/uploads/2013/07/Dan-Ski-Man-Morning-star-skis2.jpg",null);
-        final UserTrip user1Trip1 = new UserTrip(1,user1.getUserId(),"Bansko Tatilim","Istanbul to Bansko",40.9903,29.0205,"Kar Tatilimizin bir özeti...");
+        final UserTrip user1Trip1 = new UserTrip(1,user1.getUserId(),"Bansko Tatilim","Istanbul to Bansko",40.9903,29.0205,"Kar Tatilimizin bir özeti...",null);
         List<UserTrip> user1TripList = new ArrayList<>();
         user1TripList.add(user1Trip1);
         user1.setUserTripList(user1TripList);

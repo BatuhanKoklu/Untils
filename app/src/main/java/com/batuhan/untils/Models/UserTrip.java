@@ -11,12 +11,12 @@ public class UserTrip {
     private double lat;
     private double lng;
     private String content;
-    private String
+    private String tripImage;
 
     public UserTrip() {
     }
 
-    public UserTrip(int userTripId, int userId, String tripName, String whereTo, double lat, double lng, String content) {
+    public UserTrip(int userTripId, int userId, String tripName, String whereTo, double lat, double lng, String content, String tripImage) {
         this.userTripId = userTripId;
         this.userId = userId;
         this.tripName = tripName;
@@ -24,8 +24,8 @@ public class UserTrip {
         this.lat = lat;
         this.lng = lng;
         this.content = content;
+        this.tripImage = tripImage;
     }
-
 
     public int getUserTripId() {
         return userTripId;
@@ -81,5 +81,13 @@ public class UserTrip {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getTripImage() {
+        return tripImage;
+    }
+
+    public void setTripImage(String tripImage) {
+        this.tripImage = tripImage;
     }
 }
