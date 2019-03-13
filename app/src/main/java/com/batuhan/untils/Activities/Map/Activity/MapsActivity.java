@@ -55,8 +55,8 @@ public class MapsActivity extends Fragment implements MapPresenter.MapView {
         }
 
 
-        final User user1 = new User(1,"Batuhan","btn@hotmail.com","12345","http://www.morningstarskitours.com/wp-content/uploads/2013/07/Dan-Ski-Man-Morning-star-skis2.jpg",null);
-        final UserTrip user1Trip1 = new UserTrip(1,user1.getUserId(),"Bansko Tatilim","Istanbul to Bansko",40.9903,29.0205,"Kar Tatilimizin bir özeti...",null);
+        final User user1 = new User(1,"Batuhan","btn@hotmail.com","12345","https://cdn.hiconsumption.com/wp-content/uploads/2019/01/Best-Winter-Jackets-Coats-For-Men-0-Hero.jpg",null);
+        final UserTrip user1Trip1 = new UserTrip(1,user1.getUserId(),"Bansko Tatilim","Istanbul","Bankso",41.015137,28.979530,"Kar Tatilimizin bir özeti...","http://www.morningstarskitours.com/wp-content/uploads/2013/07/Dan-Ski-Man-Morning-star-skis2.jpg");
         List<UserTrip> user1TripList = new ArrayList<>();
         user1TripList.add(user1Trip1);
         user1.setUserTripList(user1TripList);
@@ -68,7 +68,7 @@ public class MapsActivity extends Fragment implements MapPresenter.MapView {
             public void onMapReady(GoogleMap mMap) {
                 googleMap = mMap;
 
-                final Marker m1 = presenter.addCustomMarker(user1,googleMap,getActivity(),getLayoutInflater());
+                final Marker m1 = presenter.addCustomMarker(user1Trip1,googleMap,getActivity(),getLayoutInflater());
 
 
                 googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
@@ -78,7 +78,7 @@ public class MapsActivity extends Fragment implements MapPresenter.MapView {
 
 
                         if(marker.equals(m1)){
-                            AlertDialog.Builder adb1 = presenter.createTripAlertDialog(getLayoutInflater(),getActivity(),user1);
+                            AlertDialog.Builder adb1 = presenter.createTripAlertDialog(getLayoutInflater(),getActivity(),user1Trip1);
 
                             adb1.setPositiveButton("Go In", new DialogInterface.OnClickListener() {
                                 @Override

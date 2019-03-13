@@ -109,7 +109,28 @@ public class GirisActivity extends AppCompatActivity  {
 
                 ao.setView(aoTasarim);
 
-                ao.create().show();
+
+                //Eget Sayfa Home ise
+                if(GirisActivity.viewPagerGiris.getCurrentItem() == 0){
+                    ao.create().show();
+                    //Sayfa Favori ise
+                }else if(GirisActivity.viewPagerGiris.getCurrentItem() == 1){
+                    etxtWhereNow.setText("Where To?");
+                    GirisActivity.viewPagerGiris.setCurrentItem(0,true);
+                    ao.create().show();
+
+                    //Sayfa Profil ise
+                }else if(GirisActivity.viewPagerGiris.getCurrentItem() == 2){
+                    GirisActivity.viewPagerGiris.setCurrentItem(0,true);
+                    etxtWhereNow.setText("Where To?");
+                    presenter.slideDown(ustTab);
+                    isUp = !isUp;
+                    ao.create().show();
+                }
+
+
+
+
 
 
             }

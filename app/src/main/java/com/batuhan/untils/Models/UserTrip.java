@@ -7,6 +7,7 @@ public class UserTrip {
     private int userTripId;
     private int userId;
     private String tripName;
+    private String from;
     private String whereTo;
     private double lat;
     private double lng;
@@ -16,10 +17,11 @@ public class UserTrip {
     public UserTrip() {
     }
 
-    public UserTrip(int userTripId, int userId, String tripName, String whereTo, double lat, double lng, String content, String tripImage) {
+    public UserTrip(int userTripId, int userId, String tripName, String from, String whereTo, double lat, double lng, String content, String tripImage) {
         this.userTripId = userTripId;
         this.userId = userId;
         this.tripName = tripName;
+        this.from = from;
         this.whereTo = whereTo;
         this.lat = lat;
         this.lng = lng;
@@ -49,6 +51,14 @@ public class UserTrip {
 
     public void setTripName(String tripName) {
         this.tripName = tripName;
+    }
+
+    public String getFrom() {
+        return from;
+    }
+
+    public void setFrom(String from) {
+        this.from = from;
     }
 
     public String getWhereTo() {

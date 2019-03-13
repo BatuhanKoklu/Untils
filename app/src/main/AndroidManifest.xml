@@ -55,6 +55,7 @@
         <activity android:name=".Activities.Profile.View.ActivityProfile" />
         <activity android:name=".Activities.Favorite.View.ActivityFavorite" />
         <activity android:name=".Activities.NewTrip.View.ActivityNewTrip" />
+</activity>
     </application>
 
 </manifest>

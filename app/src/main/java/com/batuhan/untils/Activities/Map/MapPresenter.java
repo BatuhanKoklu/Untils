@@ -62,7 +62,7 @@ public class MapPresenter {
 
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-    public AlertDialog.Builder createTripAlertDialog(LayoutInflater layoutInflater, Context context, User user) {
+    public AlertDialog.Builder createTripAlertDialog(LayoutInflater layoutInflater, Context context, UserTrip userTrip) {
 
         View aoTasarim = layoutInflater.inflate(R.layout.alert_tasarim,null);
 
@@ -72,9 +72,9 @@ public class MapPresenter {
 
         TextView txtTitle = aoTasarim.findViewById(R.id.txtTitle);
 
-        urlToImage(user.getUserImage(),imgAlert,context);//imgAlerte resim yükleme
-        txtWhereTo.setText(user.getUserTripList().get(0).getWhereTo());
-        txtTitle.setText(user.getUserTripList().get(0).getTripName());
+        urlToImage(userTrip.getTripImage(),imgAlert,context);//imgAlerte resim yükleme
+        txtWhereTo.setText(userTrip.getWhereTo());
+        txtTitle.setText(userTrip.getTripName());
 
         AlertDialog.Builder ao = new AlertDialog.Builder(context);
 
@@ -83,11 +83,11 @@ public class MapPresenter {
         return ao;
     }
 
-    public Marker addCustomMarker(User user, GoogleMap googleMap, Context context , LayoutInflater layoutInflater){
+    public Marker addCustomMarker(UserTrip userTrip, GoogleMap googleMap, Context context , LayoutInflater layoutInflater){
 
-        LatLng position = new LatLng(user.getUserTripList().get(0).getLat(), user.getUserTripList().get(0).getLng());
+        LatLng position = new LatLng(userTrip.getLat(), userTrip.getLng());
 
-        Bitmap bitmap = Bitmap.createScaledBitmap(getMarkerBitmapFromView(layoutInflater,context,user),240,280,false);
+        Bitmap bitmap = Bitmap.createScaledBitmap(getMarkerBitmapFromView(layoutInflater,context,userTrip),240,280,false);
 
         Marker marker = googleMap.addMarker(new MarkerOptions()
                 .position(position)
@@ -103,12 +103,12 @@ public class MapPresenter {
 
 
 
-    private Bitmap getMarkerBitmapFromView(LayoutInflater layoutInflater , Context context , User user) {
+    private Bitmap getMarkerBitmapFromView(LayoutInflater layoutInflater , Context context , UserTrip userTrip) {
 
         View customMarkerView = layoutInflater.inflate(R.layout.view_custom_marker,null);
         //View customMarkerView = ((LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.view_custom_marker, null);
         ImageView markerImageView = (ImageView) customMarkerView.findViewById(R.id.profile_image);
-        urlToImage(user.getUserImage(),markerImageView,context);
+        urlToImage(userTrip.getTripImage(),markerImageView,context);
         customMarkerView.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
         customMarkerView.layout(0, 0, customMarkerView.getMeasuredWidth(), customMarkerView.getMeasuredHeight());
         customMarkerView.buildDrawingCache();

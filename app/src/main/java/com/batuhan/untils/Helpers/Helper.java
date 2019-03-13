@@ -27,6 +27,9 @@ import java.net.URL;
 
 public class Helper {
 
+    public Helper() {
+
+    }
 
     public static class BlurBuilder {
 

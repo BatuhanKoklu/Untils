@@ -31,18 +31,15 @@ public class ActivityFavorite extends Fragment {
         favoriteRv.setHasFixedSize(true);
         favoriteRv.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        userTripArrayList = new ArrayList<UserTrip>();
+        userTripArrayList = new ArrayList<UserTrip>(); //Favori sayfamız için oluşturduğıumuz liste
 
-        final User user1 = new User(1,"Batuhan","btn@hotmail.com","12345","http://www.morningstarskitours.com/wp-content/uploads/2013/07/Dan-Ski-Man-Morning-star-skis2.jpg",null);
-        final UserTrip user1Trip1 = new UserTrip(1,user1.getUserId(),"Bansko Tatilim","Istanbul to Bansko",40.9903,29.0205,"Kar Tatilimizin bir özeti...",null);
-        List<UserTrip> user1TripList = new ArrayList<>();
-        user1TripList.add(user1Trip1);
-        user1.setUserTripList(user1TripList);
+        final User user1 = new User(1,"Batuhan","btn@hotmail.com","12345","https://cdn.hiconsumption.com/wp-content/uploads/2019/01/Best-Winter-Jackets-Coats-For-Men-0-Hero.jpg",null);
+        final UserTrip user1Trip1 = new UserTrip(1,user1.getUserId(),"Bansko Tatilim","Istanbul","Bansko",40.9903,29.0205,"Kar Tatilimizin bir özeti...","http://www.morningstarskitours.com/wp-content/uploads/2013/07/Dan-Ski-Man-Morning-star-skis2.jpg");
+        List<UserTrip> user1TripList = new ArrayList<>(); //User1'in Trip List parametresi içi oluşturduk.
+        user1TripList.add(user1Trip1); //Bu listeye trip ekledik.
+        user1.setUserTripList(user1TripList); //user'ın trip listesini demin oluşturduğumuz liste ile doldurduk.
 
-        User u1 = new User(1,"Barış","bar@htm.com","123123","https://coresites-cdn.factorymedia.com/mpora_new/wp-content/uploads/2016/02/Josie-Millard2.jpg",null);
-        UserTrip userTrip = new UserTrip();
-
-        userTripArrayList.add(userTrip);
+        userTripArrayList.add(user1Trip1);
 
         adapter  = new AdapterFavoriteCardView(getActivity(),userTripArrayList);
         favoriteRv.setAdapter(adapter);
