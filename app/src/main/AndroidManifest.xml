@@ -29,7 +29,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDoOuWFeb2cK3U4Dvo1pkPs_x-LfWkfCsM" />
+            android:value="AIzaSyBWDkrOQ8aAGMt8sE126YQs0VZ1ZCdOusU" />
 
         <activity android:name=".Activities.Welcome.View.MainActivity" />
 
@@ -55,7 +55,6 @@
         <activity android:name=".Activities.Profile.View.ActivityProfile" />
         <activity android:name=".Activities.Favorite.View.ActivityFavorite" />
         <activity android:name=".Activities.NewTrip.View.ActivityNewTrip" />
-</activity>
     </application>
 
 </manifest>
