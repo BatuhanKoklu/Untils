@@ -2,7 +2,9 @@ package com.batuhan.untils.Models;
 
 import com.batuhan.untils.Models.User;
 
-public class UserTrip {
+import java.io.Serializable;
+
+public class UserTrip implements Serializable {
 
     private int userTripId;
     private int userId;

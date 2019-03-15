@@ -192,6 +192,11 @@ public class GirisActivity extends AppCompatActivity  {
         viewPagerGiris.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i1) {
+
+            }
+
+            @Override
+            public void onPageSelected(int i) {
                 if(GirisActivity.viewPagerGiris.getCurrentItem() == 2){
                     presenter.slideUp(ustTab);
                     isUp = !isUp;
@@ -204,11 +209,6 @@ public class GirisActivity extends AppCompatActivity  {
                     isUp = !isUp;
                     etxtWhereNow.setText("Find Your Favorite");
                 }
-            }
-
-            @Override
-            public void onPageSelected(int i) {
-
             }
 
             @Override
