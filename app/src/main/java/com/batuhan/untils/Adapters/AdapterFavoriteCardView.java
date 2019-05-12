@@ -55,9 +55,9 @@ public class AdapterFavoriteCardView extends  RecyclerView.Adapter<AdapterFavori
         holder.btnShowOnMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(v.getContext(),GirisActivity.class);
+                /*Intent i = new Intent(v.getContext(),GirisActivity.class);
                 i.put("UserTrip",userTrip);
-                mContext.startActivity(i);
+                mContext.startActivity(i);*/
             }
         });
 

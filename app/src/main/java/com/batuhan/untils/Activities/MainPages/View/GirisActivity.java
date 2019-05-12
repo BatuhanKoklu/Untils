@@ -26,7 +26,7 @@ public class GirisActivity extends AppCompatActivity  {
 
     public static TabLayout tabLayout;
     public static ViewPager viewPagerGiris;
-    private ImageButton btnHome,btnMap,btnNew,btnFavorite,btnProfile,btnSearch;
+    private ImageButton btnHome,btnMap,btnNewTrip,btnNew,btnFavorite,btnProfile,btnSearch;
     private EditText etxtWhereNow;
     private ConstraintLayout ustTab;
     boolean isUp;
@@ -41,7 +41,8 @@ public class GirisActivity extends AppCompatActivity  {
         btnHome = findViewById(R.id.btnHome);
         btnFavorite = findViewById(R.id.btnFavorite);
         btnMap = findViewById(R.id.btnMap);
-        btnNew = findViewById(R.id.btnNew);
+        btnNewTrip = findViewById(R.id.btnNewTrip);
+
 
         etxtWhereNow = findViewById(R.id.etxtWhereNow);
 
@@ -56,8 +57,9 @@ public class GirisActivity extends AppCompatActivity  {
 
         //Tablara Fragment Ekleme
         adapter.fragmentEkle(new MapsActivity(),"Map");// 0
-        adapter.fragmentEkle(new ActivityFavorite(),"Favorite");//1
-        adapter.fragmentEkle(new ActivityProfile(), "Profile");//2
+        adapter.fragmentEkle(new ActivityNewTrip(),"NewTrip");// 1
+        adapter.fragmentEkle(new ActivityFavorite(),"Favorite");//2
+        adapter.fragmentEkle(new ActivityProfile(), "Profile");//3
 
         viewPagerGiris.setAdapter(adapter);
 
@@ -79,12 +81,12 @@ public class GirisActivity extends AppCompatActivity  {
                 if(GirisActivity.viewPagerGiris.getCurrentItem() == 0){
 
                     //Sayfa Favori ise
-                }else if(GirisActivity.viewPagerGiris.getCurrentItem() == 1){
+                }else if(GirisActivity.viewPagerGiris.getCurrentItem() == 2){
                     etxtWhereNow.setText("Where To?");
                     GirisActivity.viewPagerGiris.setCurrentItem(0,true);
 
                     //Sayfa Profil ise
-                }else if(GirisActivity.viewPagerGiris.getCurrentItem() == 2){
+                }else if(GirisActivity.viewPagerGiris.getCurrentItem() == 3){
                     GirisActivity.viewPagerGiris.setCurrentItem(0,true);
                     etxtWhereNow.setText("Where To?");
                     presenter.slideDown(ustTab);
@@ -114,21 +116,20 @@ public class GirisActivity extends AppCompatActivity  {
                 if(GirisActivity.viewPagerGiris.getCurrentItem() == 0){
                     ao.create().show();
                     //Sayfa Favori ise
-                }else if(GirisActivity.viewPagerGiris.getCurrentItem() == 1){
+                }else if(GirisActivity.viewPagerGiris.getCurrentItem() == 2){
                     etxtWhereNow.setText("Where To?");
                     GirisActivity.viewPagerGiris.setCurrentItem(0,true);
                     ao.create().show();
 
                     //Sayfa Profil ise
-                }else if(GirisActivity.viewPagerGiris.getCurrentItem() == 2){
+                }else if(GirisActivity.viewPagerGiris.getCurrentItem() == 3){
                     GirisActivity.viewPagerGiris.setCurrentItem(0,true);
                     etxtWhereNow.setText("Where To?");
                     presenter.slideDown(ustTab);
                     isUp = !isUp;
                     ao.create().show();
+
                 }
-
-
 
 
 
@@ -136,22 +137,35 @@ public class GirisActivity extends AppCompatActivity  {
             }
         });
 
+        btnNewTrip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                GirisActivity.viewPagerGiris.setCurrentItem(1,true);
+                presenter.slideUp(ustTab);
+                isUp = !isUp;
+            }
+        });
+
+
+
         btnFavorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 //Eget Sayfa Home ise favoriye aktar texti değiştir.
                 if(GirisActivity.viewPagerGiris.getCurrentItem() == 0){
-                    GirisActivity.viewPagerGiris.setCurrentItem(1,true);
-
+                    GirisActivity.viewPagerGiris.setCurrentItem(2,true);
+                    presenter.slideDown(ustTab);
+                    isUp = !isUp;
                     etxtWhereNow.setText("Find Your Favorite");
 
                     //Sayfa Favori ise
-                }else if(GirisActivity.viewPagerGiris.getCurrentItem() == 1){
+                }else if(GirisActivity.viewPagerGiris.getCurrentItem() == 2){
 
                     //Sayfa Profil ise
-                }else if(GirisActivity.viewPagerGiris.getCurrentItem() == 2){
-                    GirisActivity.viewPagerGiris.setCurrentItem(1,true);
+                }else if(GirisActivity.viewPagerGiris.getCurrentItem() == 3){
+                    GirisActivity.viewPagerGiris.setCurrentItem(2,true);
                     etxtWhereNow.setText("Find Your Favorite");
                     presenter.slideDown(ustTab);
                     isUp = !isUp;
@@ -168,18 +182,18 @@ public class GirisActivity extends AppCompatActivity  {
 
                 //Eget Sayfa Home ise
                 if(GirisActivity.viewPagerGiris.getCurrentItem() == 0){
-                    GirisActivity.viewPagerGiris.setCurrentItem(2,true);
+                    GirisActivity.viewPagerGiris.setCurrentItem(3,true);
                     presenter.slideUp(ustTab);
                     isUp = !isUp;
 
                     //Sayfa Favori ise
-                }else if(GirisActivity.viewPagerGiris.getCurrentItem() == 1){
-                    GirisActivity.viewPagerGiris.setCurrentItem(2,true);
+                }else if(GirisActivity.viewPagerGiris.getCurrentItem() == 2){
+                    GirisActivity.viewPagerGiris.setCurrentItem(3,true);
                     presenter.slideUp(ustTab);
                     isUp = !isUp;
 
                     //Sayfa Profil ise
-                }else if(GirisActivity.viewPagerGiris.getCurrentItem() == 2){
+                }else if(GirisActivity.viewPagerGiris.getCurrentItem() == 3){
 
                 }
 
